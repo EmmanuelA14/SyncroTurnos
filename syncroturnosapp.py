@@ -1,10 +1,10 @@
 import streamlit as st
-from openai import OpenAI
+import cohere
 import json
 
 # 1. Validación y conexión con los Secretos de la plataforma
 try:
-    api_key = st.secrets["OPENAI_API_KEY"]
+    api_key = st.secrets["COHERE_API_KEY"]
     client = OpenAI(api_key=api_key)
 except Exception:
     st.error("Error: Falta configurar la variable 'OPENAI_API_KEY' en los secretos de Streamlit.")
